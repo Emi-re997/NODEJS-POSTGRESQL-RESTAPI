@@ -3,6 +3,6 @@ const app = require('./app');
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(puerto, () => {
+app.listen(PORT, () => {
   console.log(`Servidor Express escuchando en el puerto ${PORT}`);
 });
