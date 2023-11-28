@@ -3,9 +3,16 @@ const { Sequelize } = require('sequelize');
 
 
 
+// Configuración de Sequelize utilizando las variables de entorno
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres', // Ajusta esto según tu DBMS
+  dialect: 'postgres',
   logging: true, // Puedes cambiarlo a false en producción para evitar la salida de las consultas SQL en la consola
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Configuración para aceptar certificados no válidos (¡ten cuidado en producción!)
+    },
+  },
 });
 
 // Verificar la conexión
