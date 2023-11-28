@@ -1,9 +1,9 @@
 // db.js
 const { Sequelize } = require('sequelize');
 
-const url = process.env.DATABASE_URL
 
-const sequelize = new Sequelize( url, {
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres', // Ajusta esto según tu DBMS
 });
 
