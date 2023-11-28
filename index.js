@@ -1,6 +1,8 @@
 const app = require('./app');
-const puerto = 3000;
+
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(puerto, () => {
-  console.log(`Servidor Express escuchando en el puerto ${puerto}`);
+  console.log(`Servidor Express escuchando en el puerto ${PORT}`);
 });
